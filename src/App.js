@@ -1,13 +1,29 @@
 import React from 'react';
-import Detail from './components/Detail/Detail';
+import HeadDetail from './components/Detail/HeadDetail/HeadDetail';
+import HeadBackgroud from './components/Detail/HeadBackgroud/HeadBackgroud';
+import HeadContent from './components/Detail/HeadContent/HeadContent';
+import Home from './components/Home/Home';
+import { Switch, Route, Link } from "react-router-dom";
 import './App.scss';
 
+function About(){
+  return (
+    <div>
+      About
+    </div>
+  )
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
-      <Detail/>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+      </Switch>
+         
+      <HeadDetail/>
+      <HeadBackgroud/>
+      <HeadContent/>
     </div>
   );
 }
